@@ -39,3 +39,15 @@ FROM order_details od
 GROUP BY p.product
 ORDER BY SUM DESC
 LIMIT 1;
+
+
+
+
+SELECT p
+.product,
+(SELECT MAX(od.quantity)
+FROM order_details od
+WHERE p.id = od.product_id)
+AS MAXQUANTITY
+FROM products p
+ORDER BY MAXQUANTITY; 
