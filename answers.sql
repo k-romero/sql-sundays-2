@@ -50,4 +50,15 @@ FROM order_details od
 WHERE p.id = od.product_id)
 AS MAXQUANTITY
 FROM products p
-ORDER BY MAXQUANTITY; 
+ORDER BY MAXQUANTITY;
+
+
+-- Practice from sqlzoo.net
+
+SELECT g.matchid, g.player
+FROM goal g
+WHERE g.teamid LIKE 'GER'
+
+SELECT id, stadium, team1, team2
+FROM game
+WHERE id = 1012
